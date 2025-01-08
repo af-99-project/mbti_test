@@ -6,20 +6,19 @@ function ResultPage() {
 	const location = useLocation();
     const { newMbti } = location.state || {}; // 전달된 데이터 가져오기
 	return (
-	  <>
-		Result
-		<p>{newMbti}</p>
-	  </>
+	  <div id='Wrap'>
+      <h2 className='resultTit'>당신의 MBTI는?</h2>
+      <p className='resultDetail'>{newMbti}</p>
+	  </div>
 	);
   }
-/* =======
+/*
 import React from "react";
 import { useLocation } from "react-router-dom"; // 데이터 수신용
 
 function ResultPage() {
   const location = useLocation();
   const answers = location.state || []; // 전달받은 답변 데이터
->>>>>>> 82e2110a3364b71f32f0e248506e6ee2c0b52bd1
 
   // 결과 계산: 각 차원마다 A와 B의 선택 횟수를 세고, A가 많으면 첫 번째 옵션, B가 많으면 두 번째 옵션을 선택
   const resultSummary = answers.reduce((summary, answer) => {

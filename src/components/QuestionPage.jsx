@@ -70,7 +70,7 @@ function QuestionPage() {
     },
     {
       "id": 7,
-      "dimension": "F/T",
+      "dimension": "T/F",
       "question": "결정할 때 사람들의 감정을 우선적으로 고려하나요?",
       "options": {
         "A": "예",
@@ -79,7 +79,7 @@ function QuestionPage() {
     },
     {
       "id": 8,
-      "dimension": "F/T",
+      "dimension": "T/F",
       "question": "갈등을 피하기 위해 타협하는 편인가요?",
       "options": {
         "A": "예",
@@ -88,7 +88,7 @@ function QuestionPage() {
     },
     {
       "id": 9,
-      "dimension": "F/T",
+      "dimension": "T/F",
       "question": "논리보다 감정적으로 판단할 때가 많나요?",
       "options": {
         "A": "예",
@@ -172,11 +172,11 @@ function QuestionPage() {
 			setAnswer(0)
 		} else if (currentIdx===9) {
 			if(answer >0){
-				const newMbti = [...mbti, "T"];
+				const newMbti = [...mbti, "F"];
 				console.log(newMbti);
 				setMbti(newMbti)
 			}else{
-				const newMbti = [...mbti, "F"];
+				const newMbti = [...mbti, "T"];
 				console.log(newMbti);
 				setMbti(newMbti)
 			}
@@ -202,16 +202,18 @@ function QuestionPage() {
 
 	return (
 		
-	<>
+	<div id='Wrap'>
 		{currentIdx < 12  &&
-			<>
-				<p>{test[currentIdx].id}</p>
-				<p>{test[currentIdx].question}</p>
-				<button type="button" onClick={()=>handleBtn(1)}>예</button>
-				<button type="button" onClick={()=>handleBtn(-1)}>아니오</button>
-			</>
+			<div className='testBox'>
+				<h2>{test[currentIdx].id}</h2>
+				<p className='detail'>{test[currentIdx].question}</p>
+				<div className='btnWrap'>
+				  <button type="button" className='yes' onClick={()=>handleBtn(1)}>예</button>
+  				<button type="button" className='no' onClick={()=>handleBtn(-1)}>아니오</button>
+				</div>
+			</div>
 			}
-	</>
+	</div>
 	);
     }
 

@@ -1,38 +1,48 @@
-.App {
-  text-align: center;
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lora:wght@400;700&family=Poppins:wght@400;600&display=swap');
+
+* { font-family: "Roboto", serif;
+  font-weight: 400;
+  font-style: normal;}
+
+
+html {
+    font-size:10px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+@media screen and (max-width:768px) {
+  html {font-size:8px;}
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+@media screen and (max-width:500px) {
+  html {font-size:6px;}
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+body {min-width:320px;}
+#Wrap {display:flex; align-items:center; justify-content:center; flex-direction:column; background:#c4e0f3; height:100vh; padding:0 20px;}
+
+.testBox {background:url(../public/img/zzzz.png) no-repeat; background-size:100% 100%; aspect-ratio:1/.8; width:100%; max-width:720px; margin:auto; text-align:center;}
+.testBox h2 {color:#8b572a; font-weight:700; font-size:4rem; margin-top:15%;
+  font-family: 'Playfair Display', serif;
 }
 
-.App-link {
-  color: #61dafb;
-}
+.detail {display:flex; justify-content:center; align-items:center; width:38rem; min-height:40%; margin:0 auto; color:#5c4b3c; font-size:2.8rem; line-height:1.4; word-break:keep-all; font-family: 'Lora', serif;}
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+.btnWrap {display:flex; justify-content:center; gap:0 1rem;}
+.btnWrap button {width:16rem; border-radius:2rem; border:0; font-family: 'Poppins', sans-serif;
+  font-weight: 600; cursor:pointer; font-size:1.8rem; transition: background-color 0.3s ease;}
+
+/* 시작 , 문제 페이지 공통 */
+.btnWrap button.start {background-color: #d48d17;}
+.btnWrap button.start:hover {background-color:#b67314;}
+.btnWrap button.yes {background-color:#88c057;}
+.btnWrap button.yes:hover {background-color:#76a94d;;}
+.btnWrap button.no {background-color:#c4413a;}
+.btnWrap button.no:hover {background-color:#a53630;}
+
+
+/* 결과 페이지 */
+h2.resultTit {color: #274c77; font-family:'Playfair Display', serif; font-size:6rem; margin-bottom:1rem;}
+p.resultDetail {width:100%; max-width:720px; color:#515151; text-align:center; font-family:'Lora', serif; font-size: 5rem;}
+p.resultDetail:after {content:""; display:block; margin-top:2rem; background:url(../public/img/mbti_result.png); background-size:100% 100%; width:100%; aspect-ratio:1/.7;}
